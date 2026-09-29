@@ -1,0 +1,16 @@
+name = "salesguard-ai"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./src"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+# Pastikan /api/* selalu diproses Worker (bukan dibalas index.html)
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "salesguard-db"
+# WAJIB diganti dengan Database ID dari Cloudflare → D1 → salesguard-db
+database_id = "8935ea37-018e-4cb1-9c81-da2e209c48e3"
